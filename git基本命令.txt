@@ -1,0 +1,55 @@
+一、linux常用命令
+
+1.创建文件夹 mkdir <dirname>
+2.查看当前文件夹目录 ls
+3.查看当前文件夹目录详情 ls -l  <-->  ll
+4.查看当前光标位置      pwd
+5.创建文件  vim  --> 如果有文件就打开，如果没有就创建
+6.在vim编辑模式下退出方式 
+	6.1 先esc键
+	6.2 英文冒号: 
+	6.3 wq  写入并退出
+	6.4 wq! 强制写入并退出
+7.查看当前文本
+	7.1 第一个命令  more <filename>
+	7.2 第二个命令  cat  <filename>
+	7.3 vim 查看
+8.删除文本 在vim模式下,不需要进入编辑模式
+    8.1 删除整行  dd
+    8.2 删除单个  需要insert进入编辑模式
+
+9.进入vim模式下，想在下一行开始插入  需要点击 o ，当点击 i 为光标在哪里就在哪里插入
+
+二、git 基本命令
+
+1.初始化版本库  git init
+2.将新建的文件加入到暂存区  git add <filename>
+3.查看当前工作区状态   git status
+4.将暂存区文件提交到 master分支   git commit -m '提交的信息'
+5.查看没有进行提交到暂存区的文件和已经提交过的文件有什么不同  git diff <filename>
+6.查看历史提交记录  git log
+7.版本回退到上一个版本 git reset --hard HEAD^
+8.版本回退到上一百个版本  git reset --hard HEAD~100
+9.现在想回到我们以前的最新版本（当前命令行窗口没有关闭）  git reset --hard commitId
+10.现在想回到我们以前的最新版本（当前命令行窗口已经关闭）
+	10.1 首先使用 git reflog 查看操作历史
+	10.2 从操作历史中找到我们的commitId 
+	10.3 git reset --hard commitId 回到最新版本
+11.撤销操作 git checkout -- helloword.txt
+12.将暂存区的数据撤销到工作区  git reset HEAD helloword.txt
+13.删除操作 
+	13.1 git rm <filename>  
+	13.2 git commit -m ""
+14.恢复删除文件 ：因为版本库存在所以可以恢复
+	14.1 首先就是将HEAD指针指向还没有删除文件的commitId  git reset --hard commitId
+	14.2 撤销删除 git checkout -- hello.txt
+
+
+
+
+
+
+
+
+
+
